@@ -13,6 +13,6 @@ jobs:
                 echo $BODY
                 curl -X POST \
                   -H "Content-type: application/json" \
-                  --data "$BODY" \
+                  --data $BODY \
                   https://www.google.com
 

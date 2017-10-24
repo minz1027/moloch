@@ -10,7 +10,7 @@ jobs:
             - test: |
                 BUILD_VERSION=`git describe --tags`
                 BODY="{\"username\": \"MolochBuild\", \"text\":\"It worked! $GIT_BRANCH - $BUILD_VERSION - $SD_PULL_REQUEST\"}"
-                curl -X POST -H "Content-type: application/json" -d $BODY https://www.google.com
+                curl -X POST -H "Content-type: application/json" -d $BODY "https://www.google.com"
             - slack-success: |
                 BUILD_VERSION=`git describe --tags`
                 BODY="{\"username\": \"MolochBuild\", \"text\":\"It worked! $GIT_BRANCH - $BUILD_VERSION - $SD_PULL_REQUEST\"}"

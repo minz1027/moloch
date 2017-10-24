@@ -7,14 +7,6 @@ jobs:
     main:
         image: andywick/moloch-build-7:1
         steps:
-            - ln -s /thirdparty .
-            - build: ./easybutton-build.sh
-            - export PATH=/data/moloch/bin:$PATH
-            - make install
-            - cp -r capture/plugins/lua/samples /data/moloch/lua
-            - test-capture: (cd tests ; ./tests.pl)
-            - export TZ=US/Eastern
-            - test-viewer: (cd viewer; npm install ; npm test)
             - slack-success: |
                 curl --help
 

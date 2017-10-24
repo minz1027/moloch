@@ -10,7 +10,7 @@ jobs:
             - slack-success: |
                 BUILD_VERSION=`git describe --tags`
                 BODY="{\"username\": \"MolochBuild\", \"text\":\"It worked! $GIT_BRANCH - $BUILD_VERSION - $SD_PULL_REQUEST\"}"
-                cat $BODY
+                echo $BODY
                 curl -X POST \
                   -H "Content-type: application/json" \
                   --data $BODY \

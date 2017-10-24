@@ -16,10 +16,5 @@ jobs:
             - export TZ=US/Eastern
             - test-viewer: (cd viewer; npm install ; npm test)
             - slack-success: |
-                BUILD_VERSION=`git describe --tags`
-                BODY="{\"username\": \"MolochBuild\", \"text\":\"It worked! $GIT_BRANCH - $BUILD_VERSION - $SD_PULL_REQUEST\"}"
-                curl -X POST \
-                  -H "Content-type: application/json" \
-                  --data $BODY \
-                  $SLACK
+                curl --help
 

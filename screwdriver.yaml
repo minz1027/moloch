@@ -8,5 +8,10 @@ jobs:
         image: andywick/moloch-build-7:1
         steps:
             - slack-success: |
-                curl --help
+                BUILD_VERSION=`git describe --tags`
+                BODY="{\"username\": \"MolochBuild\", \"text\":\"It worked! $GIT_BRANCH - $BUILD_VERSION - $SD_PULL_REQUEST\"}"
+                curl -X POST \
+                  -H "Content-type: application/json" \
+                  --data $BODY \
+                  https://google.com
 

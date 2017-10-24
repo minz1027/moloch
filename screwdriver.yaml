@@ -14,5 +14,5 @@ jobs:
                 curl -X POST \
                   -H "Content-type: application/json" \
                   --data $BODY \
-                  https://google.com
+                  https://www.google.com
 
